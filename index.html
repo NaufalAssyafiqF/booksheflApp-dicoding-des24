@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookshelf App</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  
+    <script defer src="main.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div>
+          <h1>Bookshelf App</h1>
+          <p>Aplikasi rak buku yang memudahkan untuk mengatur buku-bukumu</p>
+          <section>
+            <h3>Tambah Buku Baru</h3>
+            <form id="bookForm" data-testid="bookForm">
+              <div class="input-container">
+                <div>
+                  <label for="bookFormTitle">Judul</label>
+                  <input
+                    id="bookFormTitle"
+                    type="text"
+                    required
+                    data-testid="bookFormTitleInput"
+                  />
+                </div>
+                <div>
+                  <label for="bookFormAuthor">Penulis</label>
+                  <input
+                    id="bookFormAuthor"
+                    type="text"
+                    required
+                    data-testid="bookFormAuthorInput"
+                  />
+                </div>
+                <div>
+                  <label for="bookFormYear">Tahun</label>
+                  <input
+                    id="bookFormYear"
+                    type="number"
+                    required
+                    data-testid="bookFormYearInput"
+                  />
+                </div>
+              </div>
+              <div>
+                <input
+                  id="bookFormIsComplete"
+                  type="checkbox"
+                  data-testid="bookFormIsCompleteCheckbox"
+                />
+                <label for="bookFormIsComplete">Selesai dibaca</label>
+              </div>
+              <button
+                id="bookFormSubmit"
+                type="submit"
+                data-testid="bookFormSubmitButton"
+              >
+                Tambah Buku
+              </button>
+            </form>
+          </section>
+        </div>
+        <div>
+          <img src="assets/bookshelf.png" alt="" />
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        
+        <form id="searchBook" data-testid="searchBookForm">
+          
+          <input
+            id="searchBookTitle"
+            type="text"
+            data-testid="searchBookFormTitleInput"
+            placeholder="masukan judul buku untuk mencari..."
+          />
+          <button
+            id="searchSubmit"
+            type="submit"
+            data-testid="searchBookFormSubmitButton"
+          >
+            Cari <i class="ph-bold ph-magnifying-glass"></i>
+        </form>
+      </section>
+
+      <div class="bookshelf-container">
+        <section>
+          <h2>Belum selesai dibaca</h2>
+  
+          <div id="incompleteBookList" data-testid="incompleteBookList">
+            
+          </div>
+        </section>
+  
+        <section>
+          <h2>Selesai dibaca</h2>
+  
+          <div id="completeBookList" data-testid="completeBookList">
+            
+          </div>
+        </section>
+      </div>
+
+      <div class="edit-modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h3>Edit Buku yang dipilih</h3>
+          <form id="editForm" data-testid="editBookForm">
+              <div class="input-container">
+                <div>
+                  <label for="bookFormTitle">Judul</label>
+                  <input
+                    id="editBookFormTitle"
+                    type="text"
+                    required
+                    data-testid="editBookFormTitleInput"
+                  />
+                </div>
+                <div>
+                  <label for="bookFormAuthor">Penulis</label>
+                  <input
+                    id="editBookFormAuthor"
+                    type="text"
+                    required
+                    data-testid="editBookFormAuthorInput"
+                  />
+                </div>
+                <div>
+                  <label for="bookFormYear">Tahun</label>
+                  <input
+                    id="editBookFormYear"
+                    type="number"
+                    required
+                    data-testid="editBookFormYearInput"
+                  />
+                </div>
+              </div>
+              <div>
+                <input
+                  id="editBookFormIsComplete"
+                  type="checkbox"
+                  data-testid="editBookFormIsCompleteCheckbox"
+                />
+                <label for="bookFormIsComplete">Selesai dibaca</label>
+              </div>
+              <button
+                id="editBookFormSubmit"
+                type="submit"
+                data-testid="editBookFormSubmitButton"
+              >
+                Edit Buku
+              </button>
+            </form>
+        </div>
+      </div>
+
+    </main>
+  </body>
+</html>
